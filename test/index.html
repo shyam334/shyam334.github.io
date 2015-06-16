@@ -4,6 +4,15 @@
 	<meta charset="utf-8" />
 	<title>Travis CI build stats</title>
 	<link rel="stylesheet" href="style.css" />
+	<script>
+  	window.addEventListener("message", function(event) {
+    		console.log("received token: " + event.data.token);
+  	});
+
+	var iframe = $('<iframe />').hide();
+  	iframe.appendTo('body');
+  	iframe.attr('src', "https://api.travis-ci.org/auth/post_message");
+	</script>
 </head>
 <body>
 	<h1>Travis CI build stats</h1>
